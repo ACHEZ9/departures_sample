@@ -1,32 +1,39 @@
-<h2>Departures</h2>
+<h2 class="text-center">MBTA Departure Board - Last Updated <%= display_last_updated(@departures) %></h2>
+<div class="date-time-container">
+  <div>
+    <h3>Date</h1>
+    <div id="date"></div>
+  </div>
+  <div>
+    <h3>Current Time</h1>
+    <div id="current_time"></div>
+  </div>
+</div>
 
   <div class="row">
     <table class="table">
       <thead>
         <tr>
-          <th>Destination</th>
-          <th>Lateness</th>
           <th>Origin</th>
-          <th>ScheduledTime</th>
-          <th>Status</th>
-          <th>TimeStamp</th>
-          <th>Track</th>
+          <th>Scheduled Time</th>
+          <th>Destination</th>
           <th>Trip</th>
-
+          <th>Track</th>
+          <th>Status</th>
+          <th>Lateness</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
     <%= for departures <- @departures do %>
         <tr>
-          <td><%= departures."Destination" %></td>
-          <td><%= departures."Lateness" %></td>
           <td><%= departures."Origin" %></td>
-          <td><%= departures."ScheduledTime" %></td>
-          <td><%= departures."Status" %></td>
-          <td><%= departures."TimeStamp" %></td>
-          <td><%= departures."Track" %></td>
+          <td><%= format_timestamp_local(departures."ScheduledTime") %></td>
+          <td><%= departures."Destination" %></td>
           <td><%= departures."Trip" %></td>
+          <td><%= departures."Track" %></td>
+          <td><%= departures."Status" %></td>
+          <td><%= departures."Lateness" %></td>
         </tr>
     <% end %>
       </tbody>

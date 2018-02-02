@@ -19,3 +19,28 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+import $ from "jquery"
+
+$(document).ready(function(){
+  if(document.getElementById("date")){
+    setDate();
+  }
+
+  if(document.getElementById("current_time")){
+    startTime();
+  }
+});
+
+function setDate() {
+    var date = new Date();
+    var dateString   = date.toDateString();
+    document.getElementById("date").innerHTML = dateString;
+}
+
+function startTime() {
+  setInterval(function() {
+    var date = new Date();
+    var timeString = date.toLocaleTimeString();
+    document.getElementById("current_time").innerHTML = timeString;
+  }, 1000);
+}

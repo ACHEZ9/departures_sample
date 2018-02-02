@@ -42,7 +42,8 @@ defmodule MbtaSample.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:csv, "~> 2.0.0"},
-      {:httpoison, "~> 1.0"}
+      {:httpoison, "~> 1.0"},
+      {:timex, "~> 3.0"}
     ]
   end
 
