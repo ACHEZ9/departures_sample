@@ -1,4 +1,5 @@
-<h2 class="text-center">MBTA Departure Board - Last Updated <%= display_last_updated(@departures) %></h2>
+<h2 class="text-center">MBTA Departure Board</h2>
+<h3 class="text-center">Last Updated <%= display_last_updated(@departures) <> " EST"%></h3>
 <div class="date-time-container">
   <div>
     <h3>Date</h1>
@@ -28,7 +29,7 @@
     <%= for departures <- @departures do %>
         <tr>
           <td><%= departures."Origin" %></td>
-          <td><%= format_timestamp_local(departures."ScheduledTime") %></td>
+          <td><%= format_timestamp_local(departures."ScheduledTime") <> " EST"%></td>
           <td><%= departures."Destination" %></td>
           <td><%= departures."Trip" %></td>
           <td><%= departures."Track" %></td>

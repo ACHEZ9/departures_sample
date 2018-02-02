@@ -3,7 +3,7 @@ defmodule MbtaSampleWeb.DeparturesView do
 
   def format_timestamp_local(timestamp) do
     DateTime.from_unix!(timestamp)
-    |> Timex.local()
+    |> Timex.Timezone.convert("America/New_York")
     |> Timex.format!("{kitchen}")
   end
 
