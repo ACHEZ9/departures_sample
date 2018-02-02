@@ -1,0 +1,34 @@
+<h2>Departures</h2>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Lateness</th>
+          <th>Origin</th>
+          <th>ScheduledTime</th>
+          <th>Status</th>
+          <th>TimeStamp</th>
+          <th>Track</th>
+          <th>Trip</th>
+
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+    <%= for departures <- @departures do %>
+        <tr>
+          <td><%= departures."Destination" %></td>
+          <td><%= departures."Lateness" %></td>
+          <td><%= departures."Origin" %></td>
+          <td><%= departures."ScheduledTime" %></td>
+          <td><%= departures."Status" %></td>
+          <td><%= departures."TimeStamp" %></td>
+          <td><%= departures."Track" %></td>
+          <td><%= departures."Trip" %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+  </div>
